@@ -4,7 +4,7 @@
     <p>This is the homepage of the website</p>
   </div>
 
-   <div class="search-films">
+   <div class="search">
         <input class="input-search" type="text" placeholder="search movie or tv-series..."  v-model="search">
         <button class="btn" type="button" name="button" @click="searchFilm">Search</button>
    </div>
@@ -35,12 +35,6 @@
              </div>
             <!-- /Movie Original Language -->
             <!-- Movie Rating -->
-           <div class="rating">
-            <span>Rated:
-             <!-- <i v-for="index in movie.vote_average" class="star fas fa-star"></i>
-             <i v-for="index in (5 - movie.vote_average)" class="star far fa-star"></i> -->
-            </span>
-           </div>
            <!-- /Movie Rating -->
            <!-- Realease Date -->
            <div class="release-date">
