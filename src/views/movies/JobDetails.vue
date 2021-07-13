@@ -1,12 +1,12 @@
 <template>
 <h1>Job details</h1>
- <p>The Job id is {{ id }}</p>
+ <p>The Job id is</p>
   
 </template>
 
 <script>
 export default {
-    props: ['id'],
+    // props: ['id'],
     //  data() {
     //      return {
     //          id: this.$route.params.id,

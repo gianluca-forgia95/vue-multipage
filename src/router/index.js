@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Series from '../views/Series.vue'
-import Jobs from '../views/jobs/Jobs.vue'
-import JobDetails from '../views/jobs/JobDetails.vue'
+import Movies from '../views/movies/Movies.vue'
+import JobDetails from '../views/movies/JobDetails.vue'
 import ErrorPage from '../views/ErrorPage.vue'
 
 const routes = [
@@ -17,9 +17,9 @@ const routes = [
    component: Series
   },
   {
-    path: '/jobs',
-    name: 'Jobs',
-   component: Jobs
+    path: '/movies',
+    name: 'Movies',
+   component: Movies
   },
   {
     path: '/jobs/:id',
