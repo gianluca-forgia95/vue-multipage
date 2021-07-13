@@ -4,6 +4,11 @@
     <router-link :to="{ name: 'Series'}">Tv Series</router-link> |
     <router-link :to="{ name: 'Movies'}">Movies</router-link>
   </div>
+<!-- Buttons back forward e home -->
+  <button @click= "redirect"><i class="fas fa-laptop-house"></i></button>
+  <button @click= "back"><i class="fas fa-caret-square-left"></i></button>
+  <button @click= "forward"><i class="fas fa-caret-square-right"></i></button>
+<!-- /Buttons back forward e home -->
   <router-view/>
 </template>
 
@@ -33,3 +38,28 @@
   }
 }
 </style>
+
+<script>
+
+
+export default {
+  data() {
+  
+  },
+  methods: {
+    redirect(){
+      this.$router.push({ name: "Home"});
+    },
+    back(){
+      this.$router.go(- 1);
+    },
+    forward(){
+       this.$router.go(+ 1);
+    }
+  }
+
+
+}
+
+</script>
+

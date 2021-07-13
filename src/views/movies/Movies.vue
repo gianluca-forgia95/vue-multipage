@@ -1,29 +1,24 @@
 <template>
   <h1>Movies</h1>
-   <!-- <div class="job-container" v-for="job in jobs" :key="job.id">
-     <router-link :to="{ name: 'JobDetails', params: { id: job.id } }">
-      <h2>{{ job.title }}</h2>
-    </router-link>
+    
 
-   </div> -->
+
+   
     <div class="search">
         <input class="input-search" type="text" placeholder="search movie or tv-series..."  v-model="search">
         <button class="btn" type="button" name="button" @click="searchFilm">Search</button>
    </div>
 
-     <!-- Starter Main -->
-     <div class="start" v-if="movies.length == 0 ">
-       <h1 class="title-base">Benvenuto su Boolflix, inizia cercando Film o SerieTv</h1>
-       <img  src="img/netflix-background.jpg" alt="">
-     </div>
-    <!-- /Starter Main -->
     <h2 class="title-section" v-if="movies.length > 0">Movies</h2>
       <div class="container">
         <!-- Movie Card -->
         <div class="card" v-for="movie in movies" :key='movie.id' >
           <div class="card-inner">
             <!-- Img Cover -->
-           <img :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="Movie img" class="cover">
+            <router-link :to="{ name: 'MovieDetails', params: { id: movie.id } }">
+               <img :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="Movie img" class="cover">
+            </router-link>
+           
             <!-- /Img Cover -->
             <!-- Info Movie -->
            <div class="info">

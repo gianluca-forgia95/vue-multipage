@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Series from '../views/Series.vue'
 import Movies from '../views/movies/Movies.vue'
-import JobDetails from '../views/movies/JobDetails.vue'
+import MovieDetails from '../views/movies/MovieDetails.vue'
 import ErrorPage from '../views/ErrorPage.vue'
 
 const routes = [
@@ -22,15 +22,15 @@ const routes = [
    component: Movies
   },
   {
-    path: '/jobs/:id',
-    name: 'JobDetails',
-    component: JobDetails,
+    path: '/movies/:id',
+    name: 'MovieDetails',
+    component: MovieDetails,
     props: true
   },
   //redirect
   {
-    path: '/all-jobs',
-    redirect: '/jobs'
+    path: '/all-movies',
+    redirect: '/movies'
   },
   //catch404
   {
