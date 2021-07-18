@@ -4,10 +4,6 @@
     <p>This is the homepage of the website</p>
   </div>
 
-   <div class="search">
-        <input class="input-search" type="text" placeholder="search movie or tv-series..."  v-model="search">
-        <button class="btn" type="button" name="button" @click="searchFilm">Search</button>
-   </div>
 
      <!-- Starter Main -->
      <div class="start" v-if="movies.length == 0 ">
@@ -55,6 +51,7 @@
       </div>
 </template>
 
+
 <script>
 
 
@@ -65,10 +62,33 @@ export default {
   data() {
     return {
       movies: [],
+      series: [],
       search: "",
       apiKey: 'febf9a4fc7b46ba8b5e4681cf81209ce',
       urlSearch: 'https://api.themoviedb.org/3/search/',
     }
+  },
+  mounted() {
+       axios.get( this.urlSearch + 'movie' , {
+         params: {
+           api_key: this.apiKey,
+           language: "it-IT"
+         }
+       })
+       .then( (response) => {
+         console.log(response.data.results);
+         this.movies = response.data.results;
+         console.log(this.movies);
+         this.search = "";
+         for ( var i = 0; i < this.movies.length; i++ ) {
+           // Voto 1/5
+            this.movies[i].vote_average = Math.ceil(this.movies[i].vote_average / 2);
+           
+         }
+
+       });
+    
+
   },
   methods: {
     searchFilm() {
@@ -96,3 +116,8 @@ export default {
   }
 }
 </script>
+
+
+<style scoped lang="scss">
+
+</style>

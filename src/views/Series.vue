@@ -3,10 +3,10 @@
     <h1>Search Tv Series</h1>
     <p>Le migliori serie tv a portata di mano</p>
 
-    <div class="search">
-        <input class="input-search" type="text" placeholder="search movie or tv-series..."  v-model="search">
-        <button class="btn" type="button" name="button" @click="searchTvSeries">Search</button>
-   </div>
+   <form class="search-container">
+        <input id="search-bar" type="text" placeholder="search movie or tv-series..."  v-model="search">
+        <button class="search-icon" type="button" name="button" @click="searchFilm"><i class="fas fa-search"></i></button>
+   </form>
 
      <!-- Container series -->
     <h2 class="title-section" v-if="series.length > 0">Tv Series</h2>

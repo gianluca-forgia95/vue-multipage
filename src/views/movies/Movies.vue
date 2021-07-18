@@ -4,18 +4,19 @@
 
 
    
-    <div class="search">
-        <input class="input-search" type="text" placeholder="search movie or tv-series..."  v-model="search">
-        <button class="btn" type="button" name="button" @click="searchFilm">Search</button>
-   </div>
+    <form class="search-container">
+        <input id="search-bar" type="text" placeholder="search movie or tv-series..."  v-model="search">
+        <button class="search-icon" type="button" name="button" @click="searchFilm"><i class="fas fa-search"></i></button>
+   </form>
 
     <h2 class="title-section" v-if="movies.length > 0">Movies</h2>
       <div class="container">
+        <div class="accordion">
         <!-- Movie Card -->
         <div class="card" v-for="movie in movies" :key='movie.id' >
           <div class="card-inner">
             <!-- Img Cover -->
-            <router-link :to="{ name: 'MovieDetails', params: { id: movie.id } }">
+             <router-link :to="{ name: 'MovieDetails', params: { id: movie.id } }">
                <img :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="Movie img" class="cover">
             </router-link>
            
@@ -50,6 +51,7 @@
        </div>
       <!-- /Movie Card -->
       </div>
+    </div>
 
 
 </template>
@@ -100,31 +102,28 @@ data() {
 
 </script>
 
-<style scoped>
+<style lang="scss">
 h1 {
   text-transform: uppercase;
   font-size: 26px;
   color: crimson;
 }
 
-.job-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 400px;
-  margin: auto;
+body{
+  padding-top: 75px;
 }
 
-.job-container a {
-  text-decoration: none;
-  color: #444;
-  padding: 20px;
+
+
+
+.container {
+display: flex;
+justify-content: space-between;
+overflow-x: auto;
+margin: auto;
 }
- 
-.job-container a :hover {
-  background: #ddd;
-  border-radius: 11px;
-}
+
+
 </style>
 
 
